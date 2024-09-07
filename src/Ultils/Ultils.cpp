@@ -1,0 +1,4 @@
+#define STB_IMAGE_IMPLEMENTATION
+#define GLAD_GL_IMPLEMENTATION
+#define GLFW_INCLUDE_NONE
+#include "Ultils/Ultils.h"
