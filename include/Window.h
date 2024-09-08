@@ -21,7 +21,7 @@ public:
 
     void Initialize();
 
-    GLFWwindow* GetWindow() { return m_Window; }
+    inline GLFWwindow* GetWindow() { return m_Window; }
     inline WindowProperties GetProps() { return *m_Props; }
     inline const float GetWidth() const { return (float)m_Props->Width; }
     inline const float GetHeight() const { return (float)m_Props->Height; }

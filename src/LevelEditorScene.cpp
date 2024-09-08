@@ -1,6 +1,7 @@
 #include "LevelEditorScene.h"
 #include "Input/KeyListener.h"
 #include "Application.h"
+#include "Components/Transform.h"
 
 LevelEditorScene::LevelEditorScene() {
     PrintLn("Inside levelEditorScene");
@@ -16,9 +17,17 @@ void LevelEditorScene::Update(float deltaTime) {
     m_Shader->Use();
     glDrawElements(GL_TRIANGLES, m_ElementBuffer->Count(), GL_UNSIGNED_INT, 0);
 
+    for (const auto &e : m_Entities) {
+        e->Update(deltaTime);
+    }
+    
+
 }
 
 void LevelEditorScene::Initialize()  {
+    test = std::make_shared<Entity>("Test entity");
+    // test->AddComponent(std::make_shared<Transform>());
+    AddEntity(test);
     m_Camera = std::make_shared<Camera>(glm::vec2(0.0f, 0.));
     float vertices[] = {
         100.0f, 0.0f, 0.0f,     1.0f, 0.0f, 0.0f,  1.0f, 0.0f, // Đỉnh 0: Đỏ

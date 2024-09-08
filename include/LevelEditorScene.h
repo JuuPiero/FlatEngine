@@ -5,6 +5,8 @@
 #include "OpenGL/VertexArray.h"
 #include "OpenGL/Texture.h"
 #include "Ultils/Ultils.h"
+#include "ECS/Entity.h"
+
 class LevelEditorScene : public Scene {
 
 public:
@@ -23,6 +25,7 @@ private:
     Shared<ElementBuffer> m_ElementBuffer; 
     Shared<VertexArray> m_VertexArray;
     Shared<Texture> m_Texture;
+    Shared<Entity> test;
 };
 
 

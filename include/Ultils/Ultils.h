@@ -1,5 +1,7 @@
 #pragma once
-
+#include "imgui.h"
+#include "imgui_impl_glfw.h"
+#include "imgui_impl_opengl3.h"
 #include <glad/gl.h>
 #include <GLFW/glfw3.h>
 
@@ -27,4 +29,8 @@ inline std::string GetFileContents(const char* filePath) {
 
 template <typename T> using Unique = std::unique_ptr<T>;
 template <typename T> using Shared = std::shared_ptr<T>;
+template <typename T> using Weak = std::weak_ptr<T>;
+
 // template <typename T> using MakeShared = std::make_shared<T>;
+
+#define thanh ->
